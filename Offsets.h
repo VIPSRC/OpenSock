@@ -1,86 +1,98 @@
-#ifndef UpLUK_h
-#define UpLUK_h
+#ifndef XACODE_APP_h
+#define XACODE_APP_h
 
-namespace Offsets64 {
-    uintptr_t GNames = 0xb849220;
-    uintptr_t GWorld = 0xb8a2a70;
-    uintptr_t ViewMatrix = 0xbca91a0;
+//created on August 14, 2023
+//created by @talhaeens
 
-    uintptr_t RelativeLocation = 0x17c;
-    uintptr_t World = 0x78; //Class: GameViewportClient.ScriptViewportClient.Object to World* World;//[Offset:
-    uintptr_t ViewMatrixLevel = 0xc0;//Manual Pointer
-    uintptr_t RootComponent = 0x1b0; // SceneComponent* RootComponent
-    uintptr_t SkeletalMeshComponent = 0x458; // SkeletalMeshComponent* Mesh
-    uintptr_t CharacterMovementComponent = 0x460;
-    uintptr_t FixAttachInfoList = 0x1a0; // FixAttachInfoList
-    uintptr_t MinLOD = 0x7a8; // StaticMesh* StaticMesh;//[Offset:
-    uintptr_t Health = 0xd18; // float Health
-    uintptr_t NearDeathBreath = 0x1878; // float NearDeathBreath
-    uintptr_t NearDeathComponent = 0x1858; // STCharacterNearDeathComp* NearDeatchComponent
-    uintptr_t BreathMax = 0x164; // float BreathMax
-    uintptr_t bDead = 0xd34; // bool bDead
-    //Class: UAECharacter.Character.Pawn.Actor.Object
-    uintptr_t PlayerName = 0x8b0; // FString PlayerName
-    uintptr_t TeamID = 0x8f8; // int TeamID
-    uintptr_t Role = 0x150;//byte Role
-    uintptr_t bIsAI = 0x990; // bool bIsAI
-    // Class: STExtraWeapon.Actor.Object
-    uintptr_t ActorChildren = 0x1a0; // Actor*[] Children
-    uintptr_t WeaponEntityComp = 0x7b8; //WeaponEntity* WeaponEntityComp
-    ///Class: WeaponEntity.WeaponLogicBaseComponent.ActorComponent.Object
-    uintptr_t DrawShootLineTime = 0x13C; // DrawShootLineTime
-    uintptr_t UploadInterval = 0x170; // UploadInterval
-    uintptr_t CurBulletNumInClip = 0xe88; // int CurBulletNumInClip
-    uintptr_t CurMaxBulletNumInOneClip = 0xea8;// int CurMaxBulletNumInOneClip
-    uintptr_t bIsGunADS = 0xfa9;// bool bIsGunADS
-    uintptr_t bIsWeaponFiring = 0x1560; //bool bIsWeaponFiring
-    uintptr_t STPlayerController = 0x3b08; //STExtraPlayerController* STPlayerController
-    uintptr_t PlayerCameraManager = 0x490;//PlayerCameraManager* PlayerCameraManager
-    uintptr_t CameraCacheEntry = 0x470;//CameraCacheEntry CameraCache;//[Offset:
-    uintptr_t ViewPitchMin = 0x1c5c; //float ViewPitchMin;//[Offset:
-    uintptr_t ViewPitchMax = 0x1c60; //float ViewPitchMax;//[Offset:
-    uintptr_t ViewYawMin = 0x1c64;//float ViewYawMin;//[Offset:
-    uintptr_t ViewYawMax = 0x1c68;//float ViewYawMax;//[Offset:
-
-    //Vehicles HP
-    uintptr_t VehicleCommon = 0x9b8; //VehicleCommonComponent* VehicleCommon;//[Offset:
-    uintptr_t VHealth = 0x2a4; //float HP;//[Offset:
-    uintptr_t VHealthMax = 0x2a0;//float HPMax;//[Offset:
-    uintptr_t VFuel = 0x2c8; //float Fuel;//[Offset:
-    uintptr_t VFuelMax = 0x2c4; //float FuelMax;//[Offset:
-    uintptr_t CurrentVehicle = 0xd60;//STExtraVehicleBase* CurrentVehicle;//[Offset:
-    uintptr_t ReplicatedMovement = 0xb0;
-    uintptr_t Velocity = 0x124;//Vector Velocity;//[Offset:
-    uintptr_t cLoc = 0x750; //Pointer Manual
-    uintptr_t fovPntr = 0x660; //Pointer Manual
-    uintptr_t vMatrix = 0x590; //Pointer Manual
-    uintptr_t CameraComponent = 0x19c0; //CameraComponent* ThirdPersonCameraComponent
-    uintptr_t FieldOfView = 0x2cc; //float FieldOfView
-    uintptr_t WeaponManagerComponent = 0x2158; //CharacterWeaponManagerComponent* WeaponManagerComponent
-    uintptr_t CurrentWeaponReplicated = 0x4e8; //STExtraWeapon* CurrentWeaponReplicated
-    uintptr_t ShootWeaponEntityComp = 0xfe8;  //ShootWeaponEntity* ShootWeaponEntityComp
-
-    //Class: ShootWeaponEntity.WeaponEntity.WeaponLogicBaseComponent.ActorComponent.Object
-    uintptr_t BulletFireSpeed = 0x4e0;
-    uintptr_t AccessoriesVRecoilFactor = 0xab8;
-    uintptr_t AccessoriesHRecoilFactor = 0xabc;
-    uintptr_t AccessoriesRecoveryFactor = 0xac0;
-    uintptr_t RecoilKickADS = 0xbe8;
-    uintptr_t ExtraHitPerformScale = 0xbec;
-    uintptr_t ShootInterval = 0x518;
-    uintptr_t GameDeviationFactor = 0xb30;
-    uintptr_t AnimationKick = 0xc04;
-    uintptr_t AutoAimingConfig = 0x920;
-    uintptr_t SwitchWeaponSpeedScale = 0x2628; //float SwitchWeaponSpeedScale
-
-    // Visiblechek -> PrimitiveComponent.SceneComponent.ActorComponent.Object
-    uintptr_t LastRenderTime = 0x38c;
-    uintptr_t LastRenderTimeOnScreen = 0x390;
-    uintptr_t AcknowledgedPawn = 0x470; //Pawn* AcknowledgedPawn;//[Offs
-
-
+namespace Offsets {
+    uintptr_t GNames = 0xc7d2e70;
+    uintptr_t GWorld = 0xce93a70;
+    
+    uintptr_t RelativeLocation =  0x184; //
+    
+ uintptr_t MinLOD = 0x878;
+uintptr_t FixAttachInfoList = 0x1b0;
+uintptr_t ParachuteEquipItems = 0x1b8;
+uintptr_t WalkSpeed = 0x1f8;
+uintptr_t Role = 0x150;
+uintptr_t Children = 0x1a0;
+uintptr_t RootComponent = 0x1b0;
+uintptr_t AttachSocket = 0x30;
+uintptr_t DrawShootLineTime = 0x13c;
+uintptr_t Controller = 0x3fc0;
+uintptr_t ControlRotation = 0x468;
+uintptr_t Mesh = 0x498;
+uintptr_t MaxWalkSpeed = 0x1f4;
+uintptr_t MaxWalkSpeedCrouched = 0x1f8;
+uintptr_t PlayerCameraManager = 0x4d0;
+uintptr_t MinimalViewInfo = 0x10;
+uintptr_t MovementCharacter = 0x4a0;
+uintptr_t CurrentVehicle = 0xe08;
+uintptr_t ReplicatedMovement = 0xb0;
+uintptr_t Velocity = 0x12c;
+uintptr_t CameraCache = 0x4b0;
+uintptr_t CameraCache2 = 0x1020;
+uintptr_t FieldOfView = 0x33c;
+uintptr_t PlayerName = 0x8f0;
+uintptr_t Nation = 0x900;
+uintptr_t PlayerUID = 0x918;
+uintptr_t TeamID = 0x938;
+uintptr_t CampID = 0x928;
+uintptr_t bIsAI = 0x9e9;
+uintptr_t bDead = 0xddc;
+uintptr_t Health = 0xdc0;
+uintptr_t bIsGunADS = 0x1059;
+uintptr_t bIsWeaponFiring = 0x1640;
+uintptr_t ParachuteComponent = 0x15e8;
+uintptr_t ThirdPersonCameraComponent = 0x1ad0;
+uintptr_t CustomSpringArmComponent = 0x1a70;
+uintptr_t STCharacterMovement = 0xb28;
+uintptr_t WeaponManagerComponent = 0x2328;
+uintptr_t SwitchWeaponSpeedScale = 0x2938;
+uintptr_t STPlayerController = 0x3fc0;
+uintptr_t CurBulletNumInClip = 0xee0;
+uintptr_t ShootWeaponEntityComp = 0x1048;
+uintptr_t CurMaxBulletNumInOneClip = 0xf00;
+uintptr_t CurrWeapon = 0x500;
+uintptr_t UploadInterval = 0x178;
+uintptr_t VehicleCommon = 0xa28;
+uintptr_t VHealthMax = 0x2c0;
+uintptr_t VHealth = 0x2c4;
+uintptr_t VFuelMax = 0x334;
+uintptr_t VFuel = 0x338;
+uintptr_t BulletFireSpeed = 0x4f8;
+uintptr_t RecoilInfo = 0xaa8;
+uintptr_t ShootInterval = 0x530;
+uintptr_t WeaponWarnUpTime = 0x624;
+uintptr_t WeaponHitPartCoff = 0x62c;
+uintptr_t WeaponHitPartCoffZombie = 0x640;
+uintptr_t BaseImpactDamage = 0x654;
+uintptr_t BulletMomentum = 0x65c;
+uintptr_t MaxDamageRate = 0x748;
+uintptr_t DamageImpulse = 0x8cc;
+uintptr_t AutoAimingConfig = 0x990;
+uintptr_t AccessoriesVRecoilFactor = 0xb18;
+uintptr_t AccessoriesHRecoilFactor = 0xb1c;
+uintptr_t AccessoriesRecoveryFactor = 0xb20;
+uintptr_t GameDeviationFactor = 0xb90;
+uintptr_t RecoilKickADS = 0xc48;
+uintptr_t ExtraHitPerformScale = 0xc4c;
+uintptr_t AnimationKick = 0xc64;
+uintptr_t ViewPitchMin = 0x1cdc;
+uintptr_t ViewPitchMax = 0x1ce0;
+uintptr_t ViewYawMin = 0x1ce4;
+uintptr_t ViewYawMax = 0x1ce8;
+uintptr_t RecoilModifierStand = 0x50;
+uintptr_t RecoilModifierCrouch = 0x54;
+uintptr_t RecoilModifierProne = 0x58;
+uintptr_t LastRenderTime = 0x410;
+uintptr_t LastRenderTimeOnScreen = 0x414;
+uintptr_t AcknowledgedPawn = 0x4a8;
+uintptr_t LocalTeamID = 0x890;
+uintptr_t NearDeathBreath = 0x1980;
+uintptr_t NearDeatchComponent = 0x1960;
+uintptr_t BreathMax = 0x16c;
+uintptr_t CurrentFallSpeed = 0x1cc;
 }
-
-#endif //UpLUK
-
-
+    
+#endif //XACODE_APP OFFSETS

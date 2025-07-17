@@ -24,7 +24,8 @@
 #include <time.h>
 #include <ctype.h>
 #include <iostream>
-
+#include <thread>
+#include <chrono>
 
 #if defined(__arm__)
 int process_vm_readv_syscall = 376;
@@ -42,70 +43,10 @@ int process_vm_writev_syscall = 311;
 
 #define LEN sizeof(struct MAPS)
 
-
-
-struct Vec4 {
-    float  X, Y, Z, W;
-};
-struct Vec3 {
-    float X, Y, Z;
-};
-struct Vec2 {
-    float X, Y;
-};
-struct D3DMatrix
-{
-
-    float _11, _12, _13, _14;
-
-    float _21, _22, _23, _24;
-
-    float _31, _32, _33, _34;
-
-    float _41, _42, _43, _44;
-
-};
-struct D2DVector
-{
-	float X;
-	float Y;
-};
-struct Vec4 rot;
-struct Vec3 scale, tran;
-
-struct FRotator
-{
-    float Pitch;
-    float Yaw;
-    float Roll;
-};
-
-struct FMinimalViewInfo
-{
-    Vec3 Location;
-    Vec3 LocationLocalSpace;
-    FRotator Rotation;
-};
-
-struct FCameraCacheEntry {
-    float TimeStamp;
-    char pad[0xc];
-    FMinimalViewInfo POV;
-};
-
-struct RepMovement {
-    Vec3 LinearVelocity;
-	Vec3 AngularVelocity;
-	Vec3 Location;
-	FRotator Rotation;
-};
-
 //deta
 int height = 1080;
 int width = 2340;
 int pid = 0;
-int isBeta, nByte;
-float mx = 0, my = 0, mz = 0;
 
 struct MAPS
 {
@@ -113,11 +54,10 @@ struct MAPS
     long int lAddr;
     struct MAPS* next;
 };
-struct Ulevel {
-    uintptr_t addr;
-    int size;
-};
+
 typedef struct MAPS* PMAPS;
 
 #define SIZE sizeof(uintptr_t)
-
+#define VAR sizeof(var)
+#define PI 3.141592653589793238
+#define M_PI 3.14159265358979323846

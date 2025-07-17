@@ -1,5 +1,7 @@
-#include "support.h"
+#include "Support.h"
 #include "init.h"
+#include "Calculation.h"
+
 #include <string>
 #define maxplayerCount 100
 #define maxvehicleCount 50
@@ -8,37 +10,40 @@
 #define maxzonesCount 10
 using namespace std;
 
+
 struct PlayerBone {
-    bool isBone=false;
-    Vec2 neck;
-    Vec2 cheast;
-    Vec2 pelvis;
-    Vec2 lSh;
-    Vec2 rSh;
-    Vec2 lElb;
-    Vec2 rElb;
-    Vec2 lWr;
-    Vec2 rWr;
-    Vec2 lTh;
-    Vec2 rTh;
-    Vec2 lKn;
-    Vec2 rKn;
-    Vec2 lAn;
-    Vec2 rAn;
+	bool isBone = false;
+	Vec3 neck;
+    Vec3 cheast;
+    Vec3 pelvis;
+    Vec3 lSh;
+    Vec3 rSh;
+    Vec3 lElb;
+    Vec3 rElb;
+    Vec3 lWr;
+    Vec3 rWr;
+    Vec3 lTh;
+    Vec3 rTh;
+    Vec3 lKn;
+    Vec3 rKn;
+    Vec3 lAn;
+    Vec3 rAn;
+	Vec3 root;
 };
+
 struct PlayerWeapon {
     bool isWeapon=false;
     int id;
     int ammo;
-    int ammo2;
-
 };
+
 enum Mode {
     InitMode = 1,
     ESPMode = 2,
     HackMode = 3,
     StopMode = 4,
 };
+
 struct Options {
     int aimbotmode;
     int openState;
@@ -47,10 +52,11 @@ struct Options {
     int priority;
     bool pour;
     int aimingRange;
-    int aimingDistance;
-    int Recoil;
-    bool iBot;
-    int bulletSpeed;
+	int aimingDist;
+    int recCompe;
+    bool ignoreBot;
+    int aimingSpeed;
+	int lineTarget;
 };
 
 struct Memory {
@@ -63,8 +69,7 @@ struct Memory {
     bool NoShake;
     bool WideView;
     bool Aimbot;
-    bool Aimlock;
-    bool FastSwitchWeapon;
+    bool FastWeapon;
 };
 
 struct Request {
@@ -73,13 +78,8 @@ struct Request {
     Memory memory;
     int ScreenWidth;
     int ScreenHeight;
-    Vec2 radarPos;
+	Vec2 radarPos;
     float radarSize;
-};
-
-struct SetValue {
-    int mode;
-    int type;
 };
 
 struct VehicleData {
@@ -89,6 +89,7 @@ struct VehicleData {
     float Fuel;
     Vec3 Location;
 };
+
 
 struct ItemData {
     char ItemName[50];
@@ -111,15 +112,14 @@ struct PlayerData {
     char PlayerNameByte[100];
     int TeamID;
     float Health;
+    float HealthMax;
     float HealthKnock;
-    float HealthKnockMax;
     float Distance;
     bool isBot;
     Vec3 HeadLocation;
     Vec2 RadarLocation;
     PlayerWeapon Weapon;
     PlayerBone Bone;
-    int isVisible;
 };
 
 struct Response {
