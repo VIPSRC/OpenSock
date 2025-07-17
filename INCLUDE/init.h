@@ -1,34 +1,29 @@
-#ifndef XACODE_APP_H
-#define XACODE_APP_H
+#ifndef INIT_H
+#define INIT_H
 
-    
-    int myteamID = 101;
-    int aimFor = 1;
-    int aimBy = 1;
-    int aimWhen = 1;
-    uintptr_t cameraManager;
-    char version[69];
-	char var[32];
-    char name[100];
-    char weaponData[100];
-    float aimRadius = 200;
-	float aimDist;
-    float recoil;
-    float bSpeed;
-    float RadarSize = 125;
-    bool firing = false, ads = false, adsfiring = false;
-    bool AimTriger;
-    bool aimbot = false;
-    bool aimKnoced = false;
-    bool ignoreBot = false;
-    bool isLessRecoil = false;
-    bool isZeroRecoil = false;
-    bool isInstantHit = false;
-    bool isFastShootInterval = false;
-    bool isSmallCrosshair = false;
-    bool isHitX = false;
-    bool isNoShake = false;
-    bool isWideView = false;
-    bool isAimbot = false;
-    bool isFastWeapon = false;
+char version[69]="com.tencent.ig";
+float healthbuff[2], health;
+
+int wideView;
+bool isWideView = false;
+bool isPremium = false;
+bool aimbot = true;
+bool aimKnoced = false;
+bool isLessRecoil = false;
+bool isZeroRecoil = false;
+bool isNoShake = false;
+bool isSmallCrosshair = false;
+bool isFastParachute = false;
+bool isInstantHit = false;
+bool isHitX = false;
+bool isMetro = false;
+bool isRadar = false;
+//bool bGudFrontView = false;
+//bool isFastShootInterval = true;
+//bool isFastSwitchWeapon = true;
+//int isIpadView = -1;
+//bool isSpeedKnock = true;
+bool isAimbot = false;
+//bool isIpadViewOn = false;
+
 #endif
